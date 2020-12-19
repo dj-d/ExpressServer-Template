@@ -23,8 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression())
-app.use(helmet.hidePoweredBy())
-app.use(helmet.xssFilter())
+app.use(helmet())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
